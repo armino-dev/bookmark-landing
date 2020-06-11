@@ -88,16 +88,35 @@ export default function Home() {
               <h2>Download the extension</h2>
               <p>We’ve got more browsers in the pipeline.
             Please do let us know if you’ve got a favorite you’d like us to prioritize.</p>
+              <div className="cards-container">
+                {/** TODO: make a card component */}
+                <div className="card">
+                  <img src="/images/logo-chrome.svg" alt="Chrome Logo" />
+                  <h3>Add to Chrome</h3>
+                  <p>Minimum version 62</p>
+                  <hr className="dots" />
+                  <button className="btn btn-primary">Add &amp; Install Extension</button>
+                </div>
+                <div className="card">
+                  <img src="/images/logo-firefox.svg" alt="Firefox Logo" />
+                  <h3>Add to Firefox</h3>
+                  <p>Minimum version 55</p>
+                  <hr className="dots" />
+                  <button className="btn btn-primary">Add &amp; Install Extension</button>
+                </div>
+                <div className="card">
+                  <img src="/images/logo-opera.svg" alt="Opera Logo" />
+                  <h3>Add to Opera</h3>
+                  <p>Minimum version 46</p>
+                  <hr className="dots" />
+                  <button className="btn btn-primary">Add &amp; Install Extension</button>
+                </div>
+              </div>
             </div>
           </section>
           <p>
              
-            Add to Chrome Minimum version 62
-            Add &amp; Install Extension
-            Add to Firefox Minimum version 55
-            Add &amp; Install Extension
-            Add to Opera Minimum version 46
-            Add &amp; Install Extension
+            
             Frequently Asked Questions
             Here are some of our FAQs.
             If you have any other questions you’d like answered please feel free to email us.
