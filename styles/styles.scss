@@ -1,0 +1,271 @@
+/*
+# Front-end Style Guide
+## Layout
+The designs were created to the following widths:
+- Mobile: 375px
+- Desktop: 1440px
+## Colors
+### Primary
+- Soft Blue: hsl(231, 69%, 60%)
+- Soft Red: hsl(0, 94%, 66%)
+### Neutral
+- Grayish Blue: hsl(229, 8%, 60%)
+- Very Dark Blue: hsl(229, 31%, 21%)
+## Typography
+### Body Copy
+- Font size: 18px
+### Fonts
+- Family: [Rubik](https://fonts.google.com/specimen/Rubik)
+- Weights: 400, 500
+## Icons
+For the icons in the design, you can choose between using the icons provided or an font icon library.
+Some library suggestions can be found below:
+- [Font Awesome](https://fontawesome.com)
+- [IcoMoon](https://icomoon.io)
+- [Ionicons](https://ionicons.com)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+// colors
+$blue-soft: hsl(231, 69%, 60%);
+$red-soft: hsl(0, 94%, 66%);
+$blue-grayish: hsl(229, 8%, 60%);
+$blue-very-dark: hsl(229, 31%, 21%);
+
+// dimensions
+$max-width-desktop: 1120px;
+$max-width-mobile: 100%;
+$nav-bar-height-desktop: 135px;
+$nav-bar-height-mobile: 80px;
+
+*, *:after, *:before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    font-family: 'Rubik', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    
+}
+
+#wrapper {    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    max-width: $max-width-desktop;    
+}
+
+nav {    
+    height: $nav-bar-height-desktop;
+    padding:5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .nav-left, .nav-right {
+        display: flex;
+        align-items: center;
+        height: 40px;
+    }
+    
+    .brand {
+        width: 145px;
+        margin-left: 10px;
+    }
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;    
+    padding-right: 10px;
+    height: 48px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    &.btn-primary {
+        background-color: $blue-soft;
+        color: white;
+        &:hover {
+            background-color: white;
+            color: $blue-soft;
+            border-color: $blue-soft;
+        }
+    }
+    &.btn-secondary {
+        background-color: white;
+        color: $blue-grayish;
+        &:hover {
+            background-color: white;
+            color: $blue-grayish;
+            border-color: $blue-grayish;
+        }
+    }
+    box-shadow: 0 10px 10px 0 rgba(200, 200, 200, .5);
+}
+
+ul.menu {
+    display: flex;
+    list-style-type: none;
+    li.menu-item {         
+        display: flex;
+        align-items: center;
+        a {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            padding: 0 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $blue-very-dark;
+            font-size: 13px;
+            letter-spacing: 1px;
+            &:hover {
+                color: $red-soft;
+                &.btn-login {
+                    background-color: white;
+                    color: $red-soft;
+                }
+            }
+            &.btn-login {
+                font-weight: 500;
+                border: 1px solid $red-soft;
+                border-radius: 5px;
+                background-color: $red-soft;
+                color: white;                
+            }
+        }        
+    }
+}
+
+section {
+    margin-bottom: 90px;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: row-reverse;    
+    height: 490px;
+    margin-top: 60px;
+    .hero-text {
+        position: relative;
+        width: 50%;
+        max-width: $max-width-desktop/2;
+        right: 0px;
+        padding-top: 75px;
+        padding-right: 75px;
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 52px;
+            margin-bottom: 30px;
+            color: $blue-very-dark;            
+        }
+        p {
+            font-size: 18px;
+            line-height: 26px;
+            color: $blue-grayish;
+            text-align: justify;
+        }
+        .call-to-action {
+            margin-top: 35px;
+            .btn {
+                width: 168px;
+                margin-right: 20px;
+            }
+        }
+    }
+    .hero-image {
+        position: relative;
+        width: 50%;
+        &::before, &::after {
+            position: absolute;
+            content: "";
+        }
+        &::before {            
+            bottom: 0;
+            right: 0;
+            width: calc(100% - 220px);
+            height: 350px;
+            border-bottom-left-radius: 150px;
+            background-color: $blue-soft;
+        }
+        &::after {
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0px;         
+            background: url("/images/illustration-hero.svg") no-repeat top left;
+        }
+    }
+}
+
+.features-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 30px;
+
+    }
+    p {
+        max-width: 550px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 26px;
+        color: $blue-grayish;
+    }
+}
+
+.tab-controller {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;     
+    .tab-bar {        
+        display: flex;
+        width: 100%;
+        max-width: 730px;
+        border-bottom: 1px solid $blue-grayish;
+        .tab-item {            
+            position: relative;
+            box-sizing: border-box;
+            background-color: transparent;            
+            font-size: 18px;
+            color: $blue-grayish;
+            height: 80px;
+            width: 30%;
+            border: none;
+            width: 100%;         
+            &.active, &:hover {
+                &::after {
+                    position: absolute;
+                    content: "";
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $red-soft;
+                }
+            }            
+        }
+    }
+}
