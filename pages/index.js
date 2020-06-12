@@ -45,7 +45,7 @@ export default function Home() {
                   <div className="tab-content active">
                     <div className="tab-image-container">
                       <div className="tab-image-background"></div>
-                      <img className="tab-image" src="/images/illustration-features-tab-1.svg" alt="Illustration features 1" />                      
+                      <img className="tab-image" src="/images/illustration-features-tab-1.svg" alt="Illustration features 1" />
                     </div>
                     <div className="tab-text">
                       <h3>Bookmark in one click</h3>
@@ -58,26 +58,26 @@ export default function Home() {
                   <div className="tab-content">
                     <div className="tab-image-container">
                       <div className="tab-image-background"></div>
-                      <img className="tab-image" src="/images/illustration-features-tab-2.svg" alt="Illustration features 1" />                      
+                      <img className="tab-image" src="/images/illustration-features-tab-2.svg" alt="Illustration features 1" />
                     </div>
                     <div className="tab-text">
-                    <h3>Intelligent search</h3>
-                    <p>Our powerful search feature will help you find saved sites in no time at all.
+                      <h3>Intelligent search</h3>
+                      <p>Our powerful search feature will help you find saved sites in no time at all.
                       No need to trawl through all of your bookmarks.</p>
-                    <button className="btn btn-primary">More Info</button>
-                    </div>                    
+                      <button className="btn btn-primary">More Info</button>
+                    </div>
                   </div>
                   <div className="tab-content">
-                  <div className="tab-image-container">
+                    <div className="tab-image-container">
                       <div className="tab-image-background"></div>
-                      <img className="tab-image" src="/images/illustration-features-tab-3.svg" alt="Illustration features 1" />                      
+                      <img className="tab-image" src="/images/illustration-features-tab-3.svg" alt="Illustration features 1" />
                     </div>
                     <div className="tab-text">
-                    <h3>Share your bookmarks</h3>
-                    <p>Easily share your bookmarks and collections with others.
+                      <h3>Share your bookmarks</h3>
+                      <p>Easily share your bookmarks and collections with others.
                       Create a shareable link that you can send at the click of a button.</p>
-                    <button className="btn btn-primary">More Info</button>
-                    </div>                    
+                      <button className="btn btn-primary">More Info</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -116,68 +116,61 @@ export default function Home() {
           </section>
           <section id="faq">
             <div className="container faq-container">
-            <h2>Frequently Asked Questions</h2>
+              <h2>Frequently Asked Questions</h2>
               <p>Here are some of our FAQs.
             If you have any other questions you’d like answered please feel free to email us.</p>
-            {/** TODO: make a collapsible component */}
-            <div className="collapsible-container">
-              <input id="item-0" className="toggle" type="checkbox" />
-              <label for="item-0" className="toggle-label">What is Bookmark?</label>
-              <div id="content-0" className="collapsible-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Fusce tincidunt justo eget ultricies fringilla.
+              {/** TODO: make a collapsible component */}
+              <div className="collapsible-container">
+                <input id="item-0" className="toggle" type="checkbox" />
+                <label for="item-0" className="toggle-label">What is Bookmark?</label>
+                <div id="content-0" className="collapsible-content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Fusce tincidunt justo eget ultricies fringilla.
             Phasellus blandit ipsum quis quam ornare mattis.</p>
-              </div>
-            <input id="item-1" className="toggle" type="checkbox" />
-              <label for="item-1" className="toggle-label">How can I request a new browser?</label>
-              <div id="content-1" className="collapsible-content">
-                <p>Vivamus luctus eros aliquet convallis ultricies.
-            Mauris augue massa, ultricies non ligula.
-            Suspendisse imperdiet.
-            Vivamus luctus eros aliquet convallis ultricies.
-            Mauris augue massa, ultricies non ligula.
-            Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
-            Mauris augue massa, ultricies non ligula.
+                </div>
+                <input id="item-1" className="toggle" type="checkbox" />
+                <label for="item-1" className="toggle-label">How can I request a new browser?</label>
+                <div id="content-1" className="collapsible-content">
+                  <p>Vivamus luctus eros aliquet convallis ultricies.
+                  Mauris augue massa, ultricies non ligula.
+                  Suspendisse imperdiet.
+                  Vivamus luctus eros aliquet convallis ultricies.
+                  Mauris augue massa, ultricies non ligula.
+                  Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
+                  Mauris augue massa, ultricies non ligula.
             Suspendisse imperdiet.</p>
-              </div>
-            <input id="item-2" className="toggle" type="checkbox" />
-              <label for="item-2" className="toggle-label">Is there a mobile app?</label>
-              <div id="content-2" className="collapsible-content">
-                <p>Sed consectetur quam id neque fermentum accumsan.
-            Praesent luctus vestibulum dolor, ut condimentum urna vulputate eget.
-            Cras in ligula quis est pharetra mattis sit amet pharetra purus.
+                </div>
+                <input id="item-2" className="toggle" type="checkbox" />
+                <label for="item-2" className="toggle-label">Is there a mobile app?</label>
+                <div id="content-2" className="collapsible-content">
+                  <p>Sed consectetur quam id neque fermentum accumsan.
+                  Praesent luctus vestibulum dolor, ut condimentum urna vulputate eget.
+                  Cras in ligula quis est pharetra mattis sit amet pharetra purus.
             Sed sollicitudin ex et ultricies bibendum.</p>
-              </div>
-            <input id="item-3" className="toggle" type="checkbox" />
-              <label for="item-3" className="toggle-label">What about other Chromium browsers?</label>
-              <div id="content-3" className="collapsible-content">
-                <p>Integer condimentum ipsum id imperdiet finibus.
-            Vivamus in placerat mi, at euismod dui.
+                </div>
+                <input id="item-3" className="toggle" type="checkbox" />
+                <label for="item-3" className="toggle-label">What about other Chromium browsers?</label>
+                <div id="content-3" className="collapsible-content">
+                  <p>Integer condimentum ipsum id imperdiet finibus.
+                  Vivamus in placerat mi, at euismod dui.
             Aliquam vitae neque eget nisl gravida pellentesque non ut velit.</p>
 
+                </div>
               </div>
+              <button className="btn btn-primary">More info</button>
             </div>
-            </div>            
           </section>
-          <p>
-            
-            
-            
 
-            
-            
-
-            
-            
-            More Info
-
-            35,000+ already joined
-            Stay up-to-date with what we’re doing
-            Contact Us
-            Features
-            Pricing
-            Contact
-           </p>
+          <section id="contact">
+            <div class="container contact-container">
+              <span className="followers">35,000+ already joined</span>
+              <h2>Stay up-to-date with what we’re doing</h2>     
+              <form>
+                  <input type="email" placeholder="Enter your email address" />
+                  <button type="submit" className="btn btn-red">Contact Us</button>
+              </form>         
+            </div>
+          </section>
         </main>
         <Footer />
       </div>
