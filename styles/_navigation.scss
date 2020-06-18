@@ -1,0 +1,71 @@
+nav {        
+    height: $nav-bar-height-desktop;
+    padding:5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .nav-left, .nav-right {
+        display: flex;
+        align-items: center;
+        height: 40px;
+    }
+    
+    .brand {
+        width: 145px;
+        margin-left: 10px;
+    }
+    .hamburger {
+        display: none;
+    }
+    
+    @include phone {
+        padding-left: 20px;
+        padding-right: 20px;
+        height: $nav-bar-height-mobile;
+        .hamburger {
+            display: block;
+            button {
+                background-color: transparent;
+                box-shadow: none;
+            }
+        }
+        ul.menu {
+            display: none;
+        }
+    }
+}
+
+ul.menu {
+    display: flex;
+    list-style-type: none;
+    li.menu-item {         
+        display: flex;
+        align-items: center;
+        a {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            padding: 0 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $blue-very-dark;
+            font-size: 13px;
+            letter-spacing: 1px;
+            &:hover {
+                color: $red-soft;
+                &.btn-login {
+                    background-color: white;
+                    color: $red-soft;
+                }
+            }
+            &.btn-login {
+                font-weight: 500;
+                border: 1px solid $red-soft;
+                border-radius: 5px;
+                background-color: $red-soft;
+                color: white;                
+            }
+        }        
+    }
+}

@@ -122,14 +122,14 @@ export default function Home() {
               {/** TODO: make a collapsible component */}
               <div className="collapsible-container">
                 <input id="item-0" className="toggle" type="checkbox" />
-                <label for="item-0" className="toggle-label">What is Bookmark?</label>
+                <label htmlFor="item-0" className="toggle-label">What is Bookmark?</label>
                 <div id="content-0" className="collapsible-content">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Fusce tincidunt justo eget ultricies fringilla.
             Phasellus blandit ipsum quis quam ornare mattis.</p>
                 </div>
                 <input id="item-1" className="toggle" type="checkbox" />
-                <label for="item-1" className="toggle-label">How can I request a new browser?</label>
+                <label htmlFor="item-1" className="toggle-label">How can I request a new browser?</label>
                 <div id="content-1" className="collapsible-content">
                   <p>Vivamus luctus eros aliquet convallis ultricies.
                   Mauris augue massa, ultricies non ligula.
@@ -141,7 +141,7 @@ export default function Home() {
             Suspendisse imperdiet.</p>
                 </div>
                 <input id="item-2" className="toggle" type="checkbox" />
-                <label for="item-2" className="toggle-label">Is there a mobile app?</label>
+                <label htmlFor="item-2" className="toggle-label">Is there a mobile app?</label>
                 <div id="content-2" className="collapsible-content">
                   <p>Sed consectetur quam id neque fermentum accumsan.
                   Praesent luctus vestibulum dolor, ut condimentum urna vulputate eget.
@@ -149,7 +149,7 @@ export default function Home() {
             Sed sollicitudin ex et ultricies bibendum.</p>
                 </div>
                 <input id="item-3" className="toggle" type="checkbox" />
-                <label for="item-3" className="toggle-label">What about other Chromium browsers?</label>
+                <label htmlFor="item-3" className="toggle-label">What about other Chromium browsers?</label>
                 <div id="content-3" className="collapsible-content">
                   <p>Integer condimentum ipsum id imperdiet finibus.
                   Vivamus in placerat mi, at euismod dui.
@@ -162,11 +162,11 @@ export default function Home() {
           </section>
 
           <section id="contact">
-            <div class="container contact-container">
+            <div className="container contact-container">
               <span className="followers">35,000+ already joined</span>
               <h2>Stay up-to-date with what we’re doing</h2>     
               <form>
-                  <input type="email" placeholder="Enter your email address" />
+                  <input type="email" placeholder="Enter your email address" aria-label="Email" />
                   <button type="submit" className="btn btn-red">Contact Us</button>
               </form>         
             </div>

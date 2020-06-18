@@ -1,0 +1,56 @@
+.collapsible-container {
+    margin-top: 60px;
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 550px;
+    input[type=checkbox].toggle {
+        display: none;
+    }
+    border-bottom: 1px solid $blue-grayish;
+    .toggle-label {
+        display: flex;
+        position: relative;
+        cursor: pointer;
+        font-size: 18px;
+        align-items: center;
+        border-top: 1px solid $blue-grayish;
+        width: 100%;
+        height: 68px;
+        transition: all 0.3s ease-out;        
+        &::after {
+            content: ' ';
+            background: url("/images/icon-arrow.svg") no-repeat center center;
+            position: absolute;
+            width: 20px;
+            right: 25px;
+            bottom: 0;
+            top: 0;
+            transition: all 0.3s ease-out; 
+        }
+        &:hover {
+            color: $red-soft;
+        }
+    }
+    
+    .collapsible-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        p {
+            font-size: 16px;
+            text-align: left;
+            line-height: 35px;
+            padding-bottom: 30px;
+        }
+    }
+
+    .toggle:checked + .toggle-label + .collapsible-content {
+        max-height: 100vh;
+    }
+
+    .toggle:checked + .toggle-label::after {
+        transform: rotate(180deg);
+        filter: hue-rotate(90deg);
+        transition: all 0.3s ease-out;
+    }   
+}

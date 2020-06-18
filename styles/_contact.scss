@@ -1,0 +1,67 @@
+#contact {
+    margin-bottom: 0;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    background-color: $blue-soft;
+    padding-top: 70px;
+    padding-bottom: 75px;
+    span.followers {
+        text-transform: uppercase;
+        color: white;
+        font-size: 15px;
+        letter-spacing: 4px;
+    }
+    h2 {
+        color: white;
+        margin-top: 35px;
+        font-size: 32px;
+        font-weight: 500;
+        max-width: 450px;
+        text-align: center;
+    }
+    form {
+        margin-top: 40px;
+        input[type=email], input[type=text], .btn {
+            height: 45px;            
+            outline: none;
+        }
+        input[type=email], input[type=text] {
+            margin-right: 20px;
+            border-radius: 5px;
+            border: none;
+            width: 300px;
+            padding: 0 25px;
+            &:invalid:not(:focus):not(:placeholder-shown), &:invalid:focus:not(:placeholder-shown) {
+                border:2px solid $red-soft;
+                background: url("/images/icon-error.svg") white;
+                background-size: 20px;
+                background-repeat: no-repeat;
+                background-position-x: calc(100% - 10px);
+                background-position-y: 50%;
+            }
+            &:invalid:focus:not(:placeholder-shown) {
+                
+            }
+            
+        }
+        .btn {
+            padding-left: 25px;
+            padding-right: 25px;
+            &.btn-red {
+                background-color: $red-soft;
+                color: white;
+                box-shadow: none;
+                &:hover {
+                    color: $red-soft;
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+}
