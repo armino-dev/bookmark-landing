@@ -25,58 +25,16 @@ Some library suggestions can be found below:
 - [Ionicons](https://ionicons.com)
 */
 
-// Desktop-first media queries
-
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 
 @import "breakpoints";
 @import "colors";
 
+@import "dimensions";
 
-// dimensions
-$max-width-desktop: 1120px;
-$max-width-mobile: 100%;
-$nav-bar-height-desktop: 135px;
-$nav-bar-height-mobile: 105px;
+@import "global";
 
-*, *:after, *:before {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-
-body {
-    font-family: 'Rubik', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    width: 100%;
-}
-
-#wrapper {    
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
-    align-items: center;
-}
-
-header {
-    width: 100%;
-    max-width: $max-width-desktop;    
-}
-
-main {
-    width:100%;
-}
-
-section {
-    margin-bottom: 90px;
-    @include phone {
-        margin: 0;
-    }
-}
 @import "containers";
 @import "navigation";
 @import "buttons";
