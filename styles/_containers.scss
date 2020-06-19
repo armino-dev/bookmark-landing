@@ -16,8 +16,7 @@
         color: $blue-grayish;
     }
 
-    @include phone {
-        margin-top: 150px;
+    @include phone {        
         h2 {
             font-size: 24px;
             font-weight: 500;
@@ -26,15 +25,31 @@
         p {
             padding: 0 30px;
             font-size: 15px;
-            line-height: 26px;            
+            line-height: 24px;            
         }
     }
 }
 
+.features-container {
+    @include phone {
+        margin-top: 150px;
+    }
+}
+
 .download-container {
+    @include phone {
+        margin-top: 145px;
+        p {
+            padding: 0 35px;
+        }
+    }    
     h2 {
         margin-top: 70px;
         font-size: 32px;
+        @include phone {
+            margin-top: 0;
+            font-size: 24px;
+        }
     }
 }
 
@@ -57,5 +72,19 @@
     button {
         padding-left: 25px;
         padding-right: 25px;
+    }
+    @include phone {
+        margin-top: 98px;
+        h2 {
+            font-size: 24px;
+            padding: 0 35px;
+            text-align: center;
+            margin-bottom: 20px;            
+        }
+        p {
+            font-size: 15px;
+            padding: 0 35px;
+            line-height: 24px;
+        }
     }
 }

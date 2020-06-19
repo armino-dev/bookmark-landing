@@ -7,16 +7,29 @@
         display: none;
     }
     border-bottom: 1px solid $blue-grayish;
+    
+    @include phone {
+        margin-top: 50px;
+        padding: 0 30px;
+        border-bottom: none;
+    }
+
     .toggle-label {
         display: flex;
         position: relative;
         cursor: pointer;
         font-size: 18px;
         align-items: center;
-        border-top: 1px solid $blue-grayish;
+        border-top: 1px solid rgba($blue-grayish, 0.5);
         width: 100%;
         height: 68px;
-        transition: all 0.3s ease-out;        
+        transition: all 0.3s ease-out;
+        @include phone {
+            border-top: none;                        
+            border-bottom: 1px solid rgba($blue-grayish, 0.5);
+            height: 64px;
+            font-size: 15px;
+        }
         &::after {
             content: ' ';
             background: url("/images/icon-arrow.svg") no-repeat center center;
@@ -26,6 +39,9 @@
             bottom: 0;
             top: 0;
             transition: all 0.3s ease-out; 
+            @include phone {
+                right: 0;
+            }
         }
         &:hover {
             color: $red-soft;

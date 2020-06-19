@@ -8,18 +8,24 @@ footer {
 
 .footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;    
     height: 88px;
     width: 100%;
     max-width: $max-width-desktop;
+    @include phone {
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 45px;
+    }
     .footer-menu {
         display: flex;
         align-items: center;
-        padding-left: 5px;
+        padding-left: 5px;        
         .brand {
             margin-right: 30px;
         }
-        ul.menu {
+        ul.menu {            
             li.menu-item {         
                 a {
                     color: white;                    
@@ -29,10 +35,33 @@ footer {
                 }        
             }
         }
+        @include phone {
+            flex-direction: column;
+            align-items: center;
+            .brand {
+                margin-right: 0;
+            }
+            ul.menu {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 20px;
+                li.menu-item {                    
+                    a {
+                        font-size: 16px;
+                        height: 50px;                   
+                    }
+                }                
+            }
+        }
     }
     .footer-social {
         display: flex;
         align-items: center;
+        @include phone {
+            margin-top: 30px;
+            padding-bottom: 30px;
+        }
         a:first-child {
             margin-right: 45px;
         }
@@ -59,6 +88,14 @@ footer {
     p { 
         width: 100%;
         text-align: center;
+        br {
+            display: none;
+        }
+        @include phone {
+            br {
+                display: inline;
+            }
+        }
     }
     a {
         text-decoration: none;
