@@ -1,3 +1,4 @@
+import React from 'react'
 export default class TabController extends React.Component {
     constructor(props) {
         super(props);
