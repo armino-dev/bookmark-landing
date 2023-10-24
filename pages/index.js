@@ -3,9 +3,13 @@ import Head from 'next/head'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import TabController from '../components/tabController'
+import { tabData } from '../data/tabData'
+import { cardsData } from '../data/cardsData'
+import Hero from '../components/hero'
+import Card from '../components/card'
 
 export default function Home() {
-  return (
+    return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,19 +20,7 @@ export default function Home() {
         <Header />
         <main>
           <section id="hero">
-            <div className="hero-container">
-              <div className="hero-image"> </div>
-              <div className="hero-text">
-                <h1>A Simple Bookmark Manager</h1>
-                <p>A clean and simple interface to organize your favorite websites.
-                Open a new browser tab and see your sites load instantly.
-              Try it for free.</p>
-                <div className="call-to-action row">
-                  <a href="#" className="btn btn-primary">Get it on Chrome</a>
-                  <a href="#" className="btn btn-secondary">Get it on Firefox</a>
-                </div>
-              </div>
-            </div>
+            <Hero />
           </section>
           <section id="features">
             <div className="container features-container">
@@ -36,7 +28,7 @@ export default function Home() {
               <p>Our aim is to make it quick and easy for you to access your favorite websites.
               Your bookmarks sync between your devices so you can access them on the go.
               </p>
-              <TabController />              
+              <TabController activeTab={0} tabData={tabData}/>              
             </div>
           </section>
           <section id="download">
@@ -45,28 +37,9 @@ export default function Home() {
               <p>We’ve got more browsers in the pipeline.
             Please do let us know if you’ve got a favorite you’d like us to prioritize.</p>
               <div className="cards-container">
-                {/** TODO: make a card component */}
-                <div className="card">
-                  <img src="/images/logo-chrome.svg" alt="Chrome Logo" />
-                  <h3>Add to Chrome</h3>
-                  <p>Minimum version 62</p>
-                  <hr className="dots" />
-                  <button className="btn btn-primary">Add &amp; Install Extension</button>
-                </div>
-                <div className="card">
-                  <img src="/images/logo-firefox.svg" alt="Firefox Logo" />
-                  <h3>Add to Firefox</h3>
-                  <p>Minimum version 55</p>
-                  <hr className="dots" />
-                  <button className="btn btn-primary">Add &amp; Install Extension</button>
-                </div>
-                <div className="card">
-                  <img src="/images/logo-opera.svg" alt="Opera Logo" />
-                  <h3>Add to Opera</h3>
-                  <p>Minimum version 46</p>
-                  <hr className="dots" />
-                  <button className="btn btn-primary">Add &amp; Install Extension</button>
-                </div>
+                {cardsData && cardsData.map((card, index) => {
+                    return <Card key={index} card={card} />               
+                })}
               </div>
             </div>
           </section>
