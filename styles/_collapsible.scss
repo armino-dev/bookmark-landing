@@ -57,6 +57,13 @@
             text-align: left;
             line-height: 35px;
             padding-bottom: 30px;
+            @include phone {
+                font-size: 15px;
+                padding-left: 0;
+                padding-right: 15px;
+                padding-top: 10px;
+                line-height: 30px;
+            }
         }
     }
 

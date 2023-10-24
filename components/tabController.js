@@ -1,64 +1,57 @@
-import React from 'react'
+import React from 'react';
+import TabContent from './tabController/tabContent';
+
 export default class TabController extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            activeTab: props.activeTab ?? 0,
         }
+        this.handleTabClick = this.handleTabClick.bind(this);
+        this.tabData = props.tabData ?? [];
     }
-    
+
+    handleTabClick(e) {
+        const btn = e.target;
+        const index = btn.dataset.tabIndex;
+        this.setState({
+            activeTab: Number.parseInt(index),
+        })
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log("componentDidUpdate", this.state );
+    }
+
+    componentDidMount() {
+        console.log("componentDidMount", this.state );
+    }
 
     render() {
-        const tabData = [
-            {
-
-            },
-        ]
         return (
             <div className="tab-controller">
                 <div className="tab-bar">
-                    <button className="tab-item active">Simple Bookmarking</button>
-                    <button className="tab-item">Speedy Searching</button>
-                    <button className="tab-item">Easy Sharing</button>
+                    {this.tabData.map((tab, index) => {
+                        return (
+                            <button 
+                                key={index}
+                                data-tab-index={index}
+                                className={`tab-item ${this.state.activeTab === index ? "active" : ""}`}
+                                onClick={(e) => this.handleTabClick(e)}>{tab.title}
+                            </button>
+                        )
+                    })}
                 </div>
                 <div className="tab-container">
-                    <div className="tab-content active">
-                        <div className="tab-image-container">
-                            <div className="tab-image-background"></div>
-                            <img className="tab-image" src="/images/illustration-features-tab-1.svg" alt="Illustration features 1" />
-                        </div>
-                        <div className="tab-text">
-                            <h3>Bookmark in one click</h3>
-                            <p>Organize your bookmarks however you like.
-                            Our simple drag-and-drop interface gives you complete control over how you manage your
-                      favourite sites.</p>
-                            <button className="btn btn-primary">More Info</button>
-                        </div>
-                    </div>
-                    <div className="tab-content">
-                        <div className="tab-image-container">
-                            <div className="tab-image-background"></div>
-                            <img className="tab-image" src="/images/illustration-features-tab-2.svg" alt="Illustration features 1" />
-                        </div>
-                        <div className="tab-text">
-                            <h3>Intelligent search</h3>
-                            <p>Our powerful search feature will help you find saved sites in no time at all.
-                      No need to trawl through all of your bookmarks.</p>
-                            <button className="btn btn-primary">More Info</button>
-                        </div>
-                    </div>
-                    <div className="tab-content">
-                        <div className="tab-image-container">
-                            <div className="tab-image-background"></div>
-                            <img className="tab-image" src="/images/illustration-features-tab-3.svg" alt="Illustration features 1" />
-                        </div>
-                        <div className="tab-text">
-                            <h3>Share your bookmarks</h3>
-                            <p>Easily share your bookmarks and collections with others.
-                      Create a shareable link that you can send at the click of a button.</p>
-                            <button className="btn btn-primary">More Info</button>
-                        </div>
-                    </div>
+                    {this.tabData.map((tab, index) => {
+                        return <TabContent 
+                            key={index}
+                            activeTab={this.state.activeTab}
+                            index={index}
+                            image={tab.image}
+                            heading={tab.heading}
+                            text={tab.text} />
+                    })}
                 </div>
             </div>
         )

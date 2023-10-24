@@ -69,3 +69,27 @@ ul.menu {
         }        
     }
 }
+
+.mobile-menu {
+    & ul.menu {
+        display: none;
+        border-top: 1px solid #e5e5e5;
+        flex-direction: column;
+        width: 100%;
+        li.menu-item {         
+            align-items: center;
+            width: 100%;
+            a {
+                flex-direction: row;
+                justify-content: center;
+                width: 100%;
+            }        
+        }
+    }
+
+    @include phone {
+        ul.menu {
+            display: flex;
+        }
+    }
+}
